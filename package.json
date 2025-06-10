@@ -1,0 +1,14 @@
+{
+  "name": "vanilla-coffee-app",
+  "version": "1.0.0",
+  "description": "Vanilla JS Coffee Promo Landing Page",
+  "main": "index.js",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=index.html",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "vite": "^6.3.5"
+  }
+}
