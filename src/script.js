@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
         gtag("event", "cta_click", {
           event_category: "CTA",
           event_label: btn.innerText.trim(),
-          version: "A",
         });
       }
       // index1.html: 이동, index1-2.html: 없음
