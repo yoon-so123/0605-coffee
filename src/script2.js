@@ -1,3 +1,6 @@
+import "./style2.css";
+import { supabase } from "./supabaseClient.js";
+
 // CTA 버튼 클릭 처리 (addEventListener로 연결)
 document.addEventListener("DOMContentLoaded", function () {
   const ctaButton = document.querySelector(".cta-button.ripple");
@@ -84,8 +87,21 @@ setInterval(updateCountdown, 1000);
 // 배송 정보 제출 시 모달 표시 및 페이지 이동
 const deliveryForm = document.getElementById("deliveryForm");
 if (deliveryForm) {
-  deliveryForm.addEventListener("submit", function (e) {
+  deliveryForm.addEventListener("submit", async function (e) {
     e.preventDefault();
+    const name = document.getElementById("name").value;
+    const address = document.getElementById("address").value;
+    const phone = document.getElementById("phone").value;
+    const version = "B";
+    // Supabase 저장
+    const { data, error } = await supabase
+      .from("delivery_info")
+      .insert([{ name, address, phone, version }]);
+    if (error) {
+      alert("저장 실패: " + error.message);
+      return;
+    }
+    // 기존 모달/리디렉션
     const modal = document.getElementById("modal");
     if (modal) {
       modal.style.display = "flex";

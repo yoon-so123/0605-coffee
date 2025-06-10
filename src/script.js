@@ -1,3 +1,6 @@
+import "./style.css";
+import { supabase } from "./supabaseClient.js";
+
 // 타이머 카운트다운
 function updateTimer() {
   const timer = document.getElementById("countdown");
@@ -29,21 +32,51 @@ function updateTimer() {
 
 setInterval(updateTimer, 1000);
 
-// CTA 버튼 클릭 처리
+// === Google Analytics Event Tracking & Button Handlers ===
 document.addEventListener("DOMContentLoaded", function () {
-  // '지금 할인 받고 구매하기' 버튼에 이벤트 리스너 연결
-  const ctaButton = document.querySelector(".cta-button");
-  if (ctaButton) {
-    ctaButton.addEventListener("click", function () {
-      window.location.href = "index1-2.html";
+  // CTA 버튼 클릭 이벤트 (index1.html, index1-2.html)
+  document.querySelectorAll(".cta-button").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      if (typeof gtag === "function") {
+        gtag("event", "cta_click", {
+          event_category: "CTA",
+          event_label: btn.innerText.trim(),
+        });
+      }
+      // index1.html: 이동, index1-2.html: 없음
+      if (btn.classList.contains("cta-button")) {
+        // index1.html에서만 이동
+        if (window.location.pathname.includes("index1.html")) {
+          window.location.href = "index1-2.html";
+        }
+      }
     });
-  }
-  // go-to-form-btn 스크롤 이벤트
-  const goToFormBtn = document.querySelector(".go-to-form-btn");
-  const deliveryForm = document.getElementById("deliveryForm");
+  });
+
+  // go-to-form-btn 클릭 이벤트 (index1-2.html)
+  var goToFormBtn = document.querySelector(".go-to-form-btn");
+  var deliveryForm = document.getElementById("deliveryForm");
   if (goToFormBtn && deliveryForm) {
     goToFormBtn.addEventListener("click", function () {
+      if (typeof gtag === "function") {
+        gtag("event", "go_to_form_click", {
+          event_category: "CTA",
+          event_label: "go-to-form-btn",
+        });
+      }
       deliveryForm.scrollIntoView({ behavior: "smooth" });
+    });
+  }
+
+  // 배송 정보 제출 이벤트 (index1-2.html)
+  if (deliveryForm) {
+    deliveryForm.addEventListener("submit", function () {
+      if (typeof gtag === "function") {
+        gtag("event", "delivery_submit", {
+          event_category: "Form",
+          event_label: "delivery-submit-btn",
+        });
+      }
     });
   }
 });
@@ -65,8 +98,21 @@ window.addEventListener("load", function () {
 // 배송 정보 제출 시 모달 표시 및 페이지 이동
 const deliveryForm = document.getElementById("deliveryForm");
 if (deliveryForm) {
-  deliveryForm.addEventListener("submit", function (e) {
+  deliveryForm.addEventListener("submit", async function (e) {
     e.preventDefault();
+    const name = document.getElementById("name").value;
+    const address = document.getElementById("address").value;
+    const phone = document.getElementById("phone").value;
+    const version = "A";
+    // Supabase 저장
+    const { data, error } = await supabase
+      .from("delivery_info")
+      .insert([{ name, address, phone, version }]);
+    if (error) {
+      alert("저장 실패: " + error.message);
+      return;
+    }
+    // 기존 모달/리디렉션
     const modal = document.getElementById("modal");
     if (modal) {
       modal.style.display = "flex";

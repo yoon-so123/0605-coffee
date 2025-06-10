@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>뷰티 디바이스 프로모션</title>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-442M01E2X3"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-442M01E2X3");
+    </script>
+  </head>
+  <body>
+    <div class="top-banner">
+      <div class="banner-text">
+        <span class="lightning">⚡</span>
+        <span>지금 구매 시 57% 할인!</span>
+        <span class="lightning">⚡</span>
+      </div>
+    </div>
+    <div class="container">
+      <!-- A/B 테스트 전환 버튼 -->
+      <div class="ab-switcher">
+        <button onclick="location.href='index1.html'">A</button>
+        <button onclick="location.href='index2.html'">B</button>
+      </div>
+
+      <!-- PC 버전 좌측 콘텐츠 -->
+      <div class="left-content">
+        <!-- 상단 할인 배너 -->
+        <div class="top-banner">
+          <div class="banner-text">
+            <span class="lightning">⚡</span>
+            <span>지금 구매 시 57% 할인!</span>
+            <span class="lightning">⚡</span>
+          </div>
+        </div>
+
+        <!-- 메인 제품 영역 -->
+        <div class="hero-section">
+          <div class="product-badge">베스트셀러</div>
+          <div class="product-image">
+            <div class="coffee-icon">
+              <img
+                src="public/0.png"
+                alt="product-image"
+                width="100%"
+                height="100%"
+              />
+            </div>
+          </div>
+          <h1 class="product-title">프리미엄 뷰티 디바이스</h1>
+          <p class="product-subtitle">
+            30-40대 여성을 위한 <br />전문 케어 솔루션
+          </p>
+        </div>
+
+        <!-- 타이머 섹션 -->
+        <div class="timer-section">
+          <div class="timer-text">⏰ 할인 종료까지</div>
+          <div class="timer" id="countdown">23:59:45</div>
+        </div>
+
+        <!-- 신뢰 요소 -->
+        <div class="trust-section mobile-trust-section">
+          <div class="trust-items">
+            <div class="trust-item">
+              <div class="trust-icon">🚚</div>
+              <div class="trust-text">무료배송</div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">🔄</div>
+              <div class="trust-text">30일 무료반품</div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">🛡️</div>
+              <div class="trust-text">품질보증</div>
+            </div>
+          </div>
+          <div class="guarantee-text">
+            💳 안전결제 시스템으로 보호받는 거래 + 1년 A/S 보장
+          </div>
+        </div>
+      </div>
+
+      <!-- 가격/구매/특징/리뷰: PC 오른쪽, 모바일은 timer-section 아래 -->
+      <div class="right-sidebar">
+        <!-- 가격 정보 -->
+        <div class="price-section sidebar-price">
+          <div class="price-container">
+            <div class="original-price">정가 700,000원</div>
+            <div class="discounted-price">299,000원</div>
+            <div class="discount-badge">57% 할인 적용</div>
+            <div class="savings-text">✨ 401,000원 절약!</div>
+          </div>
+          <button class="cta-button">지금 할인 받고 구매하기</button>
+        </div>
+        <div class="pc-extra-info">
+          <div class="feature-list">
+            <div class="feature-item">
+              <span class="feature-icon">DOUBLE</span>
+              <span class="feature-text">한 번에 더블2샷</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">SPEED</span>
+              <span class="feature-text">쉽고 빠른 2분 케어</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">QUICK</span>
+              <span class="feature-text">사용시간 2배 DOWN</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">SYNERGY</span>
+              <span class="feature-text">2개의 헤드로 2배 이상의 효과</span>
+            </div>
+          </div>
+          <div class="review-summary">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <div class="review-text">4.8점 (리뷰 1,247개)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/script.js"></script>
+  </body>
+</html>

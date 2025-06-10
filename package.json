@@ -4,11 +4,14 @@
   "description": "Vanilla JS Coffee Promo Landing Page",
   "main": "index.js",
   "scripts": {
-    "dev": "live-server --port=3000 --open=index.html",
+    "dev": "vite",
     "build": "vite build"
   },
   "devDependencies": {
     "live-server": "^1.2.2",
     "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.50.0"
   }
 }
