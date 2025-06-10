@@ -17,16 +17,16 @@
       gtag("js", new Date());
       gtag("config", "G-442M01E2X3");
     </script>
+    <script type="module" crossorigin src="/assets/supabaseClient-BsMLcZUX.js"></script>
+    <script type="module" crossorigin src="/assets/script2-BWmWraLg.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/script2-CTe5akBE.css">
   </head>
-  <body class="index1-2">
-    <div class="top-banner">
-      <div class="banner-text">
-        <span class="lightning">⚡</span>
-        <span>지금 구매 시 57% 할인!</span>
-        <span class="lightning">⚡</span>
-      </div>
-    </div>
+  <body>
     <div class="container">
+      <div class="top-banner">
+        <span class="banner-icon">🚚</span>
+        <strong>지금 주문하면 내일 도착!</strong> 빠른 배송으로 바로 받아보세요
+      </div>
       <div class="detail-flex">
         <img
           src="public/0.png"
@@ -123,6 +123,31 @@
         </div>
       </div>
     </div>
-    <script type="module" src="/src/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var goToFormBtn = document.querySelector(".go-to-form-btn");
+        if (goToFormBtn) {
+          goToFormBtn.addEventListener("click", function () {
+            if (typeof gtag === "function") {
+              gtag("event", "go_to_form_click", {
+                event_category: "CTA",
+                event_label: "go-to-form-btn",
+              });
+            }
+          });
+        }
+        var deliveryForm = document.getElementById("deliveryForm");
+        if (deliveryForm) {
+          deliveryForm.addEventListener("submit", function () {
+            if (typeof gtag === "function") {
+              gtag("event", "delivery_submit", {
+                event_category: "Form",
+                event_label: "delivery-submit-btn",
+              });
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>

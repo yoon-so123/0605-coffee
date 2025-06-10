@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>제품 상세 및 배송 정보 입력</title>
+    <title>제품 상세 및 배송 정보 입력</title>
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -17,9 +17,6 @@
       gtag("js", new Date());
       gtag("config", "G-442M01E2X3");
     </script>
-    <script type="module" crossorigin src="/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
-    <script type="module" crossorigin src="/assets/script2-nLDSZSkR.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/script2-CTe5akBE.css">
   </head>
   <body>
     <div class="container">
@@ -29,7 +26,7 @@
       </div>
       <div class="detail-flex">
         <img
-          src="/assets/0-CNeFPN7f.png"
+          src="public/0.png"
           alt="프리미엄 에스프레소 머신"
           class="product-detail-img main-img"
         />
@@ -60,9 +57,9 @@
       </div>
       <!-- 상세 이미지 3개 (샘플 src, 추후 교체) -->
       <div class="detail-images">
-        <img src="/assets/5-CmKS8MQN.png" alt="상세 이미지1" />
-        <img src="/assets/0.0-BkpQvBwN.png" alt="상세 이미지2" />
-        <img src="/assets/0.0.0-CSmN1iHt.png" alt="상세 이미지3" />
+        <img src="public/5.png" alt="상세 이미지1" />
+        <img src="public/0.0.png" alt="상세 이미지2" />
+        <img src="public/0.0.0.png" alt="상세 이미지3" />
       </div>
       <form class="delivery-form" id="deliveryForm">
         <h3 style="margin-bottom: 18px">배송 정보 입력</h3>
@@ -122,7 +119,8 @@
           상담사가 곧 연락드릴 예정입니다!<br />주문 신청 감사합니다!
         </div>
       </div>
-    </div>
+    </div>
+    <script type="module" src="/src/script2.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         var goToFormBtn = document.querySelector(".go-to-form-btn");
