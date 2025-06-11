@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         gtag("event", "cta_click", {
           event_category: "CTA",
           event_label: btn.innerText.trim(),
+          version: "A",
         });
       }
       // index1.html: 이동, index1-2.html: 없음
@@ -62,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         gtag("event", "go_to_form_click", {
           event_category: "CTA",
           event_label: "go-to-form-btn",
+          version: "A",
         });
       }
       deliveryForm.scrollIntoView({ behavior: "smooth" });
@@ -75,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
         gtag("event", "delivery_submit", {
           event_category: "Form",
           event_label: "delivery-submit-btn",
+          version: "A",
         });
       }
     });

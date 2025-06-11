@@ -18,6 +18,45 @@ document.addEventListener("DOMContentLoaded", function () {
       deliveryForm.scrollIntoView({ behavior: "smooth" });
     });
   }
+
+  // 모든 .cta-button 클릭 이벤트 (index2.html)
+  document.querySelectorAll(".cta-button").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      if (typeof gtag === "function") {
+        gtag("event", "cta_click", {
+          event_category: "CTA",
+          event_label: btn.innerText.trim(),
+          version: "B",
+        });
+      }
+    });
+  });
+
+  // go-to-form-btn 클릭 이벤트 (index2-2.html)
+  if (goToFormBtn) {
+    goToFormBtn.addEventListener("click", function () {
+      if (typeof gtag === "function") {
+        gtag("event", "go_to_form_click", {
+          event_category: "CTA",
+          event_label: "go-to-form-btn",
+          version: "B",
+        });
+      }
+    });
+  }
+
+  // 배송 정보 제출 이벤트 (index2-2.html)
+  if (deliveryForm) {
+    deliveryForm.addEventListener("submit", function () {
+      if (typeof gtag === "function") {
+        gtag("event", "delivery_submit", {
+          event_category: "Form",
+          event_label: "delivery-submit-btn",
+          version: "B",
+        });
+      }
+    });
+  }
 });
 
 // 스크롤 애니메이션

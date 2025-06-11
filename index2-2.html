@@ -121,31 +121,5 @@
       </div>
     </div>
     <script type="module" src="./src/script2.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var goToFormBtn = document.querySelector(".go-to-form-btn");
-        if (goToFormBtn) {
-          goToFormBtn.addEventListener("click", function () {
-            if (typeof gtag === "function") {
-              gtag("event", "go_to_form_click", {
-                event_category: "CTA",
-                event_label: "go-to-form-btn",
-              });
-            }
-          });
-        }
-        var deliveryForm = document.getElementById("deliveryForm");
-        if (deliveryForm) {
-          deliveryForm.addEventListener("submit", function () {
-            if (typeof gtag === "function") {
-              gtag("event", "delivery_submit", {
-                event_category: "Form",
-                event_label: "delivery-submit-btn",
-              });
-            }
-          });
-        }
-      });
-    </script>
   </body>
 </html>
