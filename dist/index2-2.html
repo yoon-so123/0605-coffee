@@ -19,7 +19,7 @@
     </script>
     <script type="module" crossorigin src="./assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
     <script type="module" crossorigin src="./assets/supabaseClient-D6rcQ6uG.js"></script>
-    <script type="module" crossorigin src="./assets/script2-Gg9ZIXw-.js"></script>
+    <script type="module" crossorigin src="./assets/script2-Bd5u6c29.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/script2-CTe5akBE.css">
   </head>
   <body>
@@ -124,31 +124,5 @@
         </div>
       </div>
     </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var goToFormBtn = document.querySelector(".go-to-form-btn");
-        if (goToFormBtn) {
-          goToFormBtn.addEventListener("click", function () {
-            if (typeof gtag === "function") {
-              gtag("event", "go_to_form_click", {
-                event_category: "CTA",
-                event_label: "go-to-form-btn",
-              });
-            }
-          });
-        }
-        var deliveryForm = document.getElementById("deliveryForm");
-        if (deliveryForm) {
-          deliveryForm.addEventListener("submit", function () {
-            if (typeof gtag === "function") {
-              gtag("event", "delivery_submit", {
-                event_category: "Form",
-                event_label: "delivery-submit-btn",
-              });
-            }
-          });
-        }
-      });
-    </script>
   </body>
 </html>
