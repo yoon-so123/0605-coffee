@@ -41,7 +41,7 @@ npm run dev
 ---
 
 ## 📊 GA4 이벤트 분석 결과
-![GA4 클릭 수 비교 그래프](image1.png, image2.png)
+![GA4 클릭 수 비교 그래프](images/image1.png, images/image2.png)
 
 > *A버전(가격 할인)이 B버전(빠른 배송)보다 모든 클릭 이벤트에서 더 높은 반응을 기록함*
 
